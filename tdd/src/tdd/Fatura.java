@@ -11,6 +11,7 @@ public class Fatura {
         this.id = i;
         this.valorTotal = vT;
         this.nome = n;
+        this.status = " ";
     }
 
     public int getId() {
@@ -37,4 +38,11 @@ public class Fatura {
         this.nome = nome;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

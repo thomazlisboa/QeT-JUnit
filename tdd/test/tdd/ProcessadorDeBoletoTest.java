@@ -29,7 +29,7 @@ public class ProcessadorDeBoletoTest {
         fat = new Fatura(1, 700.0, "Thomaz");
         fat2 = new Fatura(2, 500.0, "João");
 
-        bol1 = new Boleto(1, 500.00);
+        bol1 = new Boleto(1, 00.00);
         bol2 = new Boleto(2, 200.00);
 
         boletos = new ArrayList<Boleto>();
@@ -43,7 +43,7 @@ public class ProcessadorDeBoletoTest {
     @Test
     public void FaturaPagaTest() {
 
-        String statusFatura = "PAGA";
+        String statusFatura = "FATURA PAGA!";
         processaBoleto.pagamentoFatura(fat, boletos);
         Assert.assertEquals(statusFatura, fat.getStatus());
 
@@ -51,10 +51,9 @@ public class ProcessadorDeBoletoTest {
     @Test
     public void FaturaNaoPagaTest(){
 
-        String statusExpected = "NAO PAGA";
-        processaBoletoBol.pagamentoFatura(fat2, boletos);
-        Assert.assertEquals(statusExpected, fat2.getStatus());
-
+    	String statusFatura = "FATURA PENDENTE DE PAGAMENTO!";
+        processaBoleto.pagamentoFatura(fat2, boletos);
+        Assert.assertEquals(statusFatura, fat2.getStatus());
 
     }
 
